@@ -2,4 +2,188 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+ background-image: var(--background-image); 
+ background-color: var(--background-color);
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-attachment: fixed;
+ font-family: var(--font-family);
+ color: var(--color-text);
+}
+
+.header {
+  position: relative;
+  display: grid;
+  justify-items: end;
+  align-content: start;
+  height: 100vh;
+  padding: 0 10px;
+}
+
+.decorated-zone::before {
+  content: '';
+  justify-self: end;
+  align-self: start;
+  margin-top: 10px;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  content: '';
+  justify-self: start;
+  align-self: end;
+  margin-bottom: 10px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+}
+
+.rec {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: 25px;
+  text-align: center;
+  top: 10px;
+  right: 19px;
+  color: var(--accent-color);
+}
+
+.rec::after {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  background-color: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+}
+
+.header__theme-menu {
+  display: grid;
+  padding-top: 38px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.header__theme-menu-button {
+  font-family: inherit;
+  text-transform: lowercase;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  color: var(--accent-color);
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 0 12px;
+  inline-size: 70px;
+  block-size: 26px;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
+  outline: none;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--accent-color-title);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  text-transform: lowercase;
+  font-weight: 700;
+  line-height: 82.5%;
+  padding-top: 67px;
+}
+
+.subtitle {
+  font-family: var(--font-family);
+  color: var(--accent-color-text-title);
+  font-size: var(--font-size);
+  line-height: 23.4px;
+  justify-self: end;
+  align-self: center ;
+  max-width: 491px;
+  min-width: 355px;
+  margin-top: 55px;
+  margin-bottom: 30px;
+
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--accent-color-text-title);
+  font-size: var(--font-size);
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.title_margin {
+  margin-top: 20px;
+}
+
+.content {
+  padding: 68px 10px 40px 10px;
+}
+
+.content_section {
+  display: grid;
+  margin-bottom: 50px;
+}
+
+.content_title {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--accent-color);
+  font-weight: 700;
+  background-color: transparent;
+}
+
+.content_text {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--color-text);
+  padding-top: 10px;
+  line-height: 23.4px;
+  font-weight: 400;
+  background-color: transparent;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+  cursor: pointer;
+}
+
+.content_title-decor {
+  font-weight: 400;
+}
+
+.title-decor-last {
+  background-color: var(--accent-color);
+  color: var(--accent-color-text-title);
+  font-size: var(--font-size);
+  font-weight: 700;
+  line-height: 23.4px;
+  margin-top: 20px;
 }
