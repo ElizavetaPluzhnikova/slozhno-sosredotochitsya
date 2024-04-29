@@ -263,7 +263,6 @@
     margin: 108px 0 0 -20px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     line-height: 99px;
-    font-size: 120px;
   }
 
   .subtitle {
