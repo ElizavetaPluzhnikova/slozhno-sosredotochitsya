@@ -13,6 +13,10 @@
     --accent-color-fon: #FF8DCB;
     --background-image: url(../images/cover-image-light.png);
   }
+
+  .rec {
+    display: none;
+}
 }
 .page.theme_light {
   /* сохраните этот селектор в приведённом виде.

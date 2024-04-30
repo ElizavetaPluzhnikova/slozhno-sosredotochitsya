@@ -100,6 +100,12 @@
   border: 1px solid var(--accent-color);
 }
 
+.header__theme-menu-button:hover {
+  border: 1px solid var(--accent-color);
+  outline: none;
+  cursor: pointer;
+}
+
 .header__theme-menu-button:focus-visible {
   border-bottom: 1px solid var(--accent-color);
   outline: none;
@@ -176,6 +182,7 @@
 
 .link:hover {
   border-bottom: 1px solid var(--color-text);
+  cursor: pointer;
 }
 
 .link:focus-visible {
@@ -339,15 +346,13 @@
   }
 
   .content_gallery {
-    grid-template-columns: 229px 230px 229px;
-    grid-template-rows: auto 192px 230px 318px;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
     "content_gallery-title content_gallery-title content_gallery-title"
     "img_sunset img_sunset img_ice-cream"
     "img_tape img_books img_ice-cream"
     "img_tape img_street img_street";
     gap: 20px;
-    min-width: 768px;
   }
 
   .content_gallery-title {
@@ -395,51 +400,56 @@
   }
 
   .header {
-    min-width: 1024px;
-    height: 100vh;
-    align-items: center;
-    align-content: normal;
-    gap: 10px;
-    padding: 0; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: calc(26px + 273px + 20px) calc(130px + 114px) 71px calc(25px + 89px);
+    grid-template-areas: 
+    ". header__theme-menu decorated-zone_before"
+    "title title title"
+    "subtitle subtitle subtitle"
+    "decorated-zone_after decorated-zone_after decorated-zone_after";
   }
 
   .rec {
-    right: 30px;
+    right: 29px;
     top: 20px;
-  }
+  } 
 
-  .decorated-zone::before {
-    margin: 20px ;
-  }
-
-  .decorated-zone::after {
-    margin: 20px;
+  .header.decorated-zone::before {
+    grid-area: decorated-zone_before;
+    margin: 20px 10px 0 0;
   }
 
   .header__theme-menu {
-    margin-top: -131px;
-    align-self: start;
+    grid-area: header__theme-menu;
     justify-self: center;
+    margin: 20px;
+    padding: 0;
+  }
+
+  .header .title {
+    grid-area: title;
+    margin: 0 0 0 -10px;
+    line-height: 129.5px;
+    justify-self: start;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    padding: 0;
+  }
+
+  .header .subtitle {
+    grid-area: subtitle;
+    max-width: 491px;
+    margin: 0 10px 0 0 ;
+  }
+
+  .header.decorated-zone::after {
+    grid-area: decorated-zone_after;
+    margin: 0 0 0 10px;
   }
 
   .header__theme-menu-list {
-    display: flex;
     flex-direction: row;
-    gap: 10px;
-  }
-
-  .title {
-    margin-top: 89px;
-    position: relative;
-    justify-self: start;
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
-
-  .subtitle {
-    margin: 85px 20px 0 20px;
-    justify-self: end;
-    width: 491px;
-    min-height: 71px;
+    margin: 0;
   }
 
   .content {
@@ -525,14 +535,12 @@
 
   .content_gallery {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto 260px 315px 421p;
     grid-template-areas: 
     "content_gallery-title content_gallery-title content_gallery-title"
     "img_sunset img_sunset img_ice-cream"
     "img_tape img_books img_ice-cream"
     "img_tape img_street img_street";
     gap: 20px;
-    min-width: 768px;
   }
 
   .content_gallery-title {
@@ -568,6 +576,7 @@
   }
 
   .footer_text-shadow {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     margin: 41px 260px;
   }
 
@@ -578,4 +587,7 @@
   .footer.decorated-zone::before {
     margin: 20px 6px;
   }
-}
+} 
+/* Если я удаляю дублирующие свойства в медиазапросах, 
+то на ширине экрана 1024px пропадают все стили (становятся как на ширине 375px, т.е. изначальной). 
+Если я не ошибаюсь, это из-за ограниченого диапазона в первом медиазапросе((768px <= width < 1024px))*/

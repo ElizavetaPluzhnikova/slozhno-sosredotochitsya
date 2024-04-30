@@ -14,7 +14,6 @@
   --accent-color-title: #db00ff;
   --color-text: #f1b2ce;
   --accent-color-text-title: #000028;
-  --font-family: "IBM Plex mono", Courier, monospace;
   --title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --background-image: url(../images/cover-image-dark.png);
   --font-size: 18px;
