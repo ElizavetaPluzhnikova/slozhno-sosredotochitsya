@@ -17,7 +17,6 @@
   display: grid;
   justify-items: end;
   align-content: start;
-  height: 100vh;
   padding: 0 10px;
 }
 
@@ -400,6 +399,7 @@
   }
 
   .header {
+    height: 768px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: calc(26px + 273px + 20px) calc(130px + 114px) 71px calc(25px + 89px);
