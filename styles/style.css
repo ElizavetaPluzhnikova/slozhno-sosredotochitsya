@@ -54,7 +54,7 @@
   text-align: center;
   top: 10px;
   right: 19px;
-  color: var(--accent-color);
+  color: var(--accent-color-fon);
 }
 
 .rec::after {
